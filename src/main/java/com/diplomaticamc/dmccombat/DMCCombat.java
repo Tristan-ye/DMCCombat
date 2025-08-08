@@ -33,6 +33,7 @@ public final class DMCCombat extends JavaPlugin {
     private static final Logger log = Bukkit.getLogger();
 
     public CombatHandler combatHandler;
+    private CommandListener commandListener;
 
     public CombatHandler getCombatHandler() {
         return combatHandler;
@@ -59,7 +60,8 @@ public final class DMCCombat extends JavaPlugin {
 
     private void setupListeners() {
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
-        getServer().getPluginManager().registerEvents(new CommandListener(),this);
+        commandListener = new CommandListener(this);
+        getServer().getPluginManager().registerEvents(commandListener,this);
         getServer().getPluginManager().registerEvents(new PlayerItemCooldownListener(this), this);
         getServer().getPluginManager().registerEvents(new SpawnProtectionListener(this), this);
         getServer().getPluginManager().registerEvents(new NewbieProtectionListener(newbieManager), this);
@@ -85,6 +87,10 @@ public final class DMCCombat extends JavaPlugin {
         reloadConfig();
         Config.init(getConfig());
         saveConfig();
+
+        if (commandListener != null) {
+            commandListener.loadBlockedCommands(this);
+        }
 
         if (newbieManager != null) {
             newbieManager.shutdown();
