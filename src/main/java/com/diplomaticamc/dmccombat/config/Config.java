@@ -1,6 +1,7 @@
 package com.diplomaticamc.dmccombat.config;
 
 import org.bukkit.configuration.file.FileConfiguration;
+import java.util.Arrays;
 
 public class Config {
 
@@ -17,6 +18,31 @@ public class Config {
         config.addDefault("spawn_protection.use_chunks", false);
         config.addDefault("spawn_protection.chunks_amount", 32);
         config.addDefault("spawn_protection.blocks_amount", 32);
+
+        config.addDefault("blocked-commands", Arrays.asList(
+                "t spawn",
+                "n spawn",
+                "warp",
+                "trade",
+                "res spawn",
+                "home",
+                "tradesystem:trade",
+                "town spawn",
+                "nation spawn",
+                "resident spawn",
+                "homes",
+                "towny:nation spawn",
+                "towny:town spawn",
+                "towny:resident spawn",
+                "player spawn",
+                "towny:player spawn",
+                "towny:n spawn",
+                "towny:nat spawn",
+                "towny:tw spawn",
+                "towny:res spawn",
+                "towny:t spawn",
+                "suicide"
+        ));
 
         config.options().copyDefaults(true);
     }
