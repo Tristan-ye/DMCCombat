@@ -1,0 +1,38 @@
+ender_pearl_cooldown_ticks: 240
+golden_apple_cooldown_ticks: 100
+riptide_in_combat_cooldown_ticks: 400
+
+newbie_protection:
+  protection_time: 43200
+  cancel_duration: 10
+
+reload-message: "&aConfiguration reloaded"
+
+spawn_protection:
+  use_chunks: false
+  chunks_amount: 32
+  blocks_amount: 32
+
+blocked-commands:
+  - t spawn
+  - n spawn
+  - warp
+  - trade
+  - res spawn
+  - home
+  - tradesystem:trade
+  - town spawn
+  - nation spawn
+  - resident spawn
+  - homes
+  - towny:nation spawn
+  - towny:town spawn
+  - towny:resident spawn
+  - player spawn
+  - towny:player spawn
+  - towny:n spawn
+  - towny:nat spawn
+  - towny:tw spawn
+  - towny:res spawn
+  - towny:t spawn
+  - suicide
